@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 
 import './Blog.css';
 import Posts from './Posts/Posts'
+import NewPost from "./NewPost/NewPost";
 
 class Blog extends Component {
     render () {
@@ -15,14 +17,10 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-                <Posts/>
 
-                {/*<section>*/}
-                {/*    <FullPost id={this.state.selectedPostId}/>*/}
-                {/*</section>*/}
-                {/*<section>*/}
-                {/*    <NewPost />*/}
-                {/*</section>*/}
+                <Route exact path='/' component={Posts} />
+                <Route path='/new-post' component={NewPost} />
+
             </div>
         );
     }
