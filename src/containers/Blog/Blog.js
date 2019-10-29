@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 
 import './Blog.css';
 import Posts from './Posts/Posts'
@@ -13,21 +13,21 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/">
+                                <NavLink to="/" exact>
                                     Home
-                                </Link>
+                                </NavLink>
                             </li>
 
                             {/*example how we can use anchor*/}
                             <li>
-                                <Link to={{
+                                <NavLink to={{
                                     pathname: "/new-post",
                                     // both hash and search are available in this.props.location
                                     hash: '#submit',
                                     search: '?quick-submit=true'
                                 }}>
                                     New Post
-                                </Link>
+                                </NavLink>
                             </li>
 
                         </ul>
