@@ -22,7 +22,9 @@ class Blog extends Component {
                             <li>
                                 <Link to={{
                                     pathname: "/new-post",
-                                    hash: '#submit'
+                                    // both hash and search are available in this.props.location
+                                    hash: '#submit',
+                                    search: '?quick-submit=true'
                                 }}>
                                     New Post
                                 </Link>
