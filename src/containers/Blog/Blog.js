@@ -6,7 +6,22 @@ import Posts from './Posts/Posts'
 import NewPost from "./NewPost/NewPost";
 
 class Blog extends Component {
+
+    state = {
+        auth: false
+    }
+
     render () {
+        const newPostLink = this.state.auth ? <NavLink to={{
+                pathname: "/new-post",
+                    //example how we can use anchor
+                    // both hash and search are available in this.props.location
+                hash: '#submit',
+                search: '?quick-submit=true'
+            }}>
+                New Post
+            </NavLink> : null
+
         return (
             <div className="Blog">
                 <header>
@@ -18,24 +33,21 @@ class Blog extends Component {
                                 </NavLink>
                             </li>
 
-                            {/*example how we can use anchor*/}
                             <li>
-                                <NavLink to={{
-                                    pathname: "/new-post",
-                                    // both hash and search are available in this.props.location
-                                    hash: '#submit',
-                                    search: '?quick-submit=true'
-                                }}>
-                                    New Post
-                                </NavLink>
+                                { newPostLink }
                             </li>
 
                         </ul>
                     </nav>
                 </header>
 
+                <div className="buttons">
+                    <button onClick={() => this.setState({auth : true})}>Login</button>
+                    <button onClick={() => this.setState({auth : false})}>Logout</button>
+                </div>
+
                 <Switch>
-                    <Route path='/new-post' component={NewPost} />
+                    {this.state.auth ? <Route path='/new-post' component={NewPost} /> : null }
                     <Route path='/posts/' component={Posts} />
                     <Redirect from="/" to="/posts" />
                 </Switch>
