@@ -32,6 +32,10 @@ class Header extends Component {
                         </ul>
                     </nav>
                 </header>
+                <div className="buttons">
+                    <button onClick={this.props.login}>Login</button>
+                    <button onClick={this.props.logout}>Logout</button>
+                </div>
              </div>
         );
     }
