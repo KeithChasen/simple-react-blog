@@ -33,7 +33,9 @@ class App extends Component {
             null
 
       return (
-          <BrowserRouter>
+          //in case we need to change base url
+          // we can set basename param
+          <BrowserRouter basename="/">
               <React.Fragment>
                   <div className="Blog">
                       <Header
