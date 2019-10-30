@@ -26,6 +26,12 @@ class Header extends Component {
                             </li>
 
                             <li>
+                                <NavLink to="/users" exact>
+                                    Users
+                                </NavLink>
+                            </li>
+
+                            <li>
                                 { newPostLink }
                             </li>
 
