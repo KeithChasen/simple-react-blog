@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axiosInstance from "../../../axios";
-import Post from "../../../components/Post/Post";
+import axiosInstance from "../../axios";
+import Post from "../../components/Post/Post";
 import { Route } from "react-router-dom";
 
 import './Posts.css'
